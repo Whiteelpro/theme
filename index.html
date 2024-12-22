@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('yt.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            max-width: 800px;
+            margin: 50px auto;
+            border-radius: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            color: #FF4500;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar a {
+            display: block;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .sidebar a:hover {
+            color: #FF4500;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: gray;
+        }
+
+        section {
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>CLEARVISION</h2>
+        <a href="#" onclick="showSection('home')">Home</a>
+    </div>
+
+    <div class="container">
+        <section id="home" class="active">
+            <h1>Welcome to ClearVision</h1>
+            <p>This is the home section.</p>
+        </section>
+
+        <div class="footer">
+            <p>By Whitexshop</p>
+        </div>
+    </div>
+</body>
+</html>
